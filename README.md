@@ -33,6 +33,21 @@
   * Adams–Bashforth methods exhibit noticeable *stability issues*.
   * The Adams–Moulton predictor–corrector method remains more stable than explicit methods.
 * A file named multistep_results.csv is generated containing:
+* ## Technologies Used
+
+* *Programming Language:* C++
+* *Numerical Methods:*
+
+  * Runge–Kutta (RK4)
+  * Adams–Bashforth methods
+  * Adams–Moulton predictor–corrector method
+* *Standard Libraries:*
+
+  * <iostream> for input/output
+  * <vector> for dynamic arrays
+  * <cmath> for mathematical functions
+  * <fstream> for file handling
+  * <algorithm> for error analysis
 
   * Time values
   * Exact solution
