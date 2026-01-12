@@ -12,7 +12,7 @@
 
 using namespace std;
 
-
+// ODE: dy/dt = f(t,y)
 double f(double t, double y) {
     return -2*y + exp(-t);
 }
