@@ -89,7 +89,7 @@ vector<double> compute_error(const vector<double>& y, const vector<double>& t) {
 
    int main() {
     // change h to 0.1 (accurate) or 1.0 (show instability)
-    double h = 1.0;
+    double h = 1.0; // Large step to show stability issues
     double T = 5.0;
     int n = int(T/h);
 
