@@ -55,3 +55,27 @@
   * Corresponding absolute errors
 
 This file can be used to generate error curves and stability plots.
+
+
+## How to Run
+
+1. * Run this code into c++ compiler*
+     
+2. *Change step size*
+
+   * Open the source file and modify:
+
+     cpp
+     double h = 0.1;   // for accuracy
+     // or
+     double h = 1.0;   // to demonstrate stability issues
+     
+
+3. *View Results*
+
+   * Console output shows maximum errors for each method.
+   * Open multistep_results.csv/xlsx in Excel for plot:
+
+     * Numerical solutions vs exact solution 
+     * Error curves and graph
+     * Stability behavior 
