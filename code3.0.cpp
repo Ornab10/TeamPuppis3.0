@@ -27,7 +27,17 @@ double RK4_step(double t, double y, double h) {
 }
 
 // adams-bashforth 2step
+vector<double> AB2(double h, int n) {
+    vector<double> y(n+1), t(n+1);
+    y[0] = 1.0; t[0] = 0.0;
+    y[1] = RK4_step(t[0], y[0], h); t[1] = t[0] + h;
 
+    for(int i=1; i<n; ++i) {
+        t[i+1] = t[i] + h;
+        y[i+1] = y[i] + h/2*(3*f(t[i], y[i]) - f(t[i-1], y[i-1]));
+    }
+    return y;
+}
 
 // adams bashforth 3 step
 vector<double> AB3(double h, int n) {
