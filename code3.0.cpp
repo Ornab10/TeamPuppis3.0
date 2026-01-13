@@ -17,7 +17,14 @@ double exact(double t) {
     return exp(-2*t) + 0.5*exp(-t);
 }
 
-
+// RK4 single step
+double RK4_step(double t, double y, double h) {
+    double k1 = f(t, y);
+    double k2 = f(t + h/2, y + h/2 * k1);
+    double k3 = f(t + h/2, y + h/2 * k2);
+    double k4 = f(t + h, y + h * k3);
+    return y + h/6*(k1 + 2*k2 + 2*k3 + k4);
+}
 
 // adams-bashforth 2step
 vector<double> AB2(double h, int n) {
