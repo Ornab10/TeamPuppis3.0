@@ -1,11 +1,5 @@
-
-
-
 #include <iostream>
 #include <vector>
-
-
-
 #include <cmath>
 #include <fstream>
 #include <algorithm> //For max element
@@ -119,7 +113,7 @@ vector<double> compute_error(const vector<double>& y, const vector<double>& t) {
     cout << "Max Error AB3:   " << max_error(err_AB3) << "\n";
     cout << "Max Error AM2:   " << max_error(err_AM2) << "\n";
 
-
+      //save result to CSV file
     ofstream file("multistep_results.csv");
     file << "t,Exact,RK4,AB2,AB3,AM2,Err_RK,Err_AB2,Err_AB3,Err_AM2\n";
     for(int i=0; i<=n; ++i)
@@ -134,17 +128,15 @@ vector<double> compute_error(const vector<double>& y, const vector<double>& t) {
     cout << "Results saved to multistep_results.csv\n";
     cout << "Run with h = 0.1 for accuracy and h = 1.0 to see stability issues.\n";
 
+   return 0;
+
+
+
+   }
 
 
 
 
-    return 0;
-
-
-
-
-
-}
 
 
 
