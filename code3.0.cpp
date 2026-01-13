@@ -6,7 +6,16 @@
 
 using namespace std;
 
+// ODE: dy/dt = f(t,y)
 
+double f(double t, double y) {
+    return -2*y + exp(-t);
+}
+
+// exact solution
+double exact(double t) {
+    return exp(-2*t) + 0.5*exp(-t);
+}
 
 // RK4 single step
 double RK4_step(double t, double y, double h) {
