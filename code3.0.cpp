@@ -38,7 +38,19 @@ vector<double> AB2(double h, int n) {
     }
     return y;
 }
+// adams bashforth 3 step
+vector<double> AB3(double h, int n) {
+    vector<double> y(n+1), t(n+1);
+    y[0] = 1.0; t[0] = 0.0;
+    y[1] = RK4_step(t[0], y[0], h); t[1] = t[0] + h;
+    y[2] = RK4_step(t[1], y[1], h); t[2] = t[1] + h;
 
+    for(int i=2; i<n; ++i) {
+        t[i+1] = t[i] + h;
+        y[i+1] = y[i] + h/12*(23*f(t[i],y[i]) - 16*f(t[i-1],y[i-1]) + 5*f(t[i-2],y[i-2]));
+    }
+    return y;
+}
 // adams bashforth 3 step
 
 // adams-multon 2 step Predictor Corrector (AM2)
